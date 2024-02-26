@@ -32,4 +32,4 @@ const decodeJwtToken = (token) => {
   }
 };
 
-export { generateJwtToken, getCurrentDate,decodeJwtToken };
+export { generateJwtToken, getCurrentDate, decodeJwtToken };
