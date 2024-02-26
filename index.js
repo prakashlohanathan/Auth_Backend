@@ -16,7 +16,7 @@ app.use(express.json());
 //dbConnection
 dbConnection();
 
-app.use("/api/auth", authRouter);
+app.use("/auth", authRouter);
 
 //Server Connection
 app.listen(PORT, () => console.log(`Server listening at ${PORT}`));
