@@ -2,7 +2,6 @@ import jwt from "jsonwebtoken";
 
 //JWT token generating
 let generateJwtToken = (id) => {
-  
   return jwt.sign({ id }, process.env.SECRET_KEY);
 };
 
@@ -25,7 +24,6 @@ function getCurrentDate() {
 //Decode Jwt Token
 const decodeJwtToken = (token) => {
   try {
-    
     let decoded = jwt.verify(token, process.env.SECRET_KEY);
     return decoded.id;
   } catch (error) {
@@ -34,4 +32,4 @@ const decodeJwtToken = (token) => {
   }
 };
 
-export { generateJwtToken, getCurrentDate, decodeJwtToken };
+export { generateJwtToken, getCurrentDate,decodeJwtToken };
