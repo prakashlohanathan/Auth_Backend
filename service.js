@@ -2,6 +2,9 @@ import jwt from "jsonwebtoken";
 
 //JWT token generating
 let generateJwtToken = (id) => {
+  if (!process.env.SECRET_KEY) {
+    throw new Error("SECRET_KEY is not defined in the environment variables");
+  }
   return jwt.sign({ id }, process.env.SECRET_KEY);
 };
 
@@ -24,6 +27,9 @@ function getCurrentDate() {
 //Decode Jwt Token
 const decodeJwtToken = (token) => {
   try {
+    if (!process.env.SECRET_KEY) {
+      throw new Error("SECRET_KEY is not defined in the environment variables");
+    }
     let decoded = jwt.verify(token, process.env.SECRET_KEY);
     return decoded.id;
   } catch (error) {
