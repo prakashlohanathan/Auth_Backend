@@ -1,4 +1,8 @@
 import jwt from "jsonwebtoken";
+import dotenv from "dotenv";
+
+//ENV configuration
+dotenv.config();
 
 //JWT token generating
 let generateJwtToken = (id) => {
