@@ -135,7 +135,7 @@ router.get("/get-user", async (req, res) => {
     if (!user) {
       return res.status(400).json({ message: "Invalid Credentials" });
     }
-    console.log(user,token,userId);
+    //console.log(user,token,userId);
     res.status(200).json({ message:"user data got successfully",user});
   } catch (error) {
     console.log(error);
